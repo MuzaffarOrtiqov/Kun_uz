@@ -34,4 +34,5 @@ build/
 /mvnw
 /mvnw.cmd
 /pom.xml
-/src/main/java/com/example/Kun_uz/talablar.txt
+/src/main/resources/talablar.txt
+/src/main/resources/talablar.txt

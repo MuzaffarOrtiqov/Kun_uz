@@ -1,0 +1,31 @@
+### CREATE CATEGORY
+POST localhost:8080/category/create
+Content-Type: application/json
+
+{
+  "orderNumber": 4,
+  "nameUz": "category4 UZ",
+  "nameEn": "category4 EN",
+  "nameRu": "category4 RU"
+}
+
+### UPDATE CATEGORY
+PUT localhost:8080/category/update/4
+Content-Type: application/json
+
+{
+  "orderNumber": 4,
+  "nameUz": "category4 Uz",
+  "nameEn": "category4 En",
+  "nameRu": "category4 Ru"
+}
+
+### DELETE BY ID
+DELETE localhost:8080/category/delete/4
+
+### GET ALL CATEGORIES
+GET localhost:8080/category/all
+
+### GET ALL BY LANGUAGE
+GET localhost:8080/category/allWithLang
+Accept-Language: EN

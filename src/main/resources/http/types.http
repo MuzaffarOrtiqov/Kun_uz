@@ -1,0 +1,34 @@
+### CREATE TYPES
+POST localhost:8080/types/create
+Content-Type: application/json
+
+{
+  "orderNumber": 3,
+  "nameUz":"Type3 uz ",
+  "nameRu":"Type3 ru",
+  "nameEn":"Type3 en"
+}
+
+### UPADTE TYPES
+PUT localhost:8080/types/update/3
+Content-Type: application/json
+
+{
+
+  "orderNumber": 1,
+  "nameUz": "parta",
+  "nameRu": "парта",
+  "nameEn": "desk"
+}
+
+### DELETE TYPES
+DELETE localhost:8080/types/delete/3
+
+### PAGINATION
+POST localhost:8080/types/all?page=1&size=3
+
+### PAGINATION WITH
+POST localhost:8080/types/paginationByLanguage/?language="name_uz"&page=1&size=3
+
+### GET BY LANGUAGE
+GET localhost:8080/types/getByLanguage

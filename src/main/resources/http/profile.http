@@ -1,0 +1,32 @@
+### CREATE PROFILE
+POST localhost:8080/profile/create
+Content-Type: application/json
+
+{
+  "name": "Doniyor",
+  "surname": "Uktamov",
+  "email": "ortiqovmuzaffar171@gmail.com",
+  "phone": "998942702363"
+
+}
+
+### GET ALL PROFILES
+GET localhost:8080/profile/page?page=1&size=3
+
+
+### UPDATE PROFILE PHOTO
+
+PUT localhost:8080/profile/updatePhoto/2?photo_id=3
+
+### UPDATE USER BY ADMIN
+PUT localhost:8080/profile/updateForAdmin/
+
+### FILTER
+POST localhost:8080/profile/filter?page=1&size=3
+Content-Type: application/json
+
+{
+  "createdDateFrom": "2024-05-21",
+  "createdDateTo": "2024-05-21"
+}
+

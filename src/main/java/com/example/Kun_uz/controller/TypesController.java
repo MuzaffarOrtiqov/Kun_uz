@@ -1,16 +1,12 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.TypeCreateDTO;
+import com.example.Kun_uz.createDTO.TypeCreateDTO;
 import com.example.Kun_uz.dto.TypesDTO;
 import com.example.Kun_uz.enums.LanguageEnum;
 import com.example.Kun_uz.service.TypesService;
 import jakarta.validation.Valid;
-import org.apache.tomcat.util.http.parser.AcceptLanguage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;

@@ -2,7 +2,6 @@ package com.example.Kun_uz.repository;
 
 import com.example.Kun_uz.Mapper.CategoryMapper;
 import com.example.Kun_uz.entity.CategoryEntity;
-import com.example.Kun_uz.enums.LanguageEnum;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -22,10 +21,3 @@ public interface CategoryRepository extends CrudRepository<CategoryEntity, Integ
     List<CategoryMapper> findAllByLanguage(@Param("lang") String lang);
 
 }
-/* " select id, " +
-            " CASE :lang " +
-            "   WHEN 'UZ' THEN name_uz " +
-            "   WHEN 'EN' THEN name_en " +
-            "   WHEN 'RU' THEN name_ru " +
-            "  END as name " +
-            "from regions order by order_number desc ;*/

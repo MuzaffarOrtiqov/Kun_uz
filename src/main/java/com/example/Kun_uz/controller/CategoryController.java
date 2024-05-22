@@ -1,6 +1,6 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.CategoryCreateDTO;
+import com.example.Kun_uz.createDTO.CategoryCreateDTO;
 import com.example.Kun_uz.dto.CategoryDTO;
 import com.example.Kun_uz.enums.LanguageEnum;
 import com.example.Kun_uz.service.CategoryService;

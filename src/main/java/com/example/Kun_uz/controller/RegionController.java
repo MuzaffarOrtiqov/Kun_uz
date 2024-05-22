@@ -1,6 +1,6 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.RegionCreateDTO;
+import com.example.Kun_uz.createDTO.RegionCreateDTO;
 import com.example.Kun_uz.dto.RegionDTO;
 import com.example.Kun_uz.enums.LanguageEnum;
 import com.example.Kun_uz.service.RegionService;

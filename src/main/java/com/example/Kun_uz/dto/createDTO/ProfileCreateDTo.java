@@ -1,4 +1,4 @@
-package com.example.Kun_uz.createDTO;
+package com.example.Kun_uz.dto.createDTO;
 
 import com.example.Kun_uz.enums.ProfileRole;
 import com.example.Kun_uz.enums.ProfileStatus;
@@ -24,6 +24,7 @@ public class ProfileCreateDTo {
     @NotNull(message = "Phone number cannot be null")
     @Size(min = 12, max = 12, message = "Phone number shoudld have 12 characters")
     private String phone;
+    @NotBlank(message = "Password is mandatory")
     @Size(min = 8, message = "Password must be at least 8 characters long")
     @Pattern(regexp = "^(?=.*[0-9])(?=.*[a-zA-Z]).{8,}$", message = "Password must contain at least one letter and one number")
     private String password;

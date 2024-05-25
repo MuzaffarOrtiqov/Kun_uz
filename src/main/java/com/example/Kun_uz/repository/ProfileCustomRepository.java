@@ -1,7 +1,7 @@
 package com.example.Kun_uz.repository;
 
 import com.example.Kun_uz.dto.FilterResponseDTO;
-import com.example.Kun_uz.dto.ProfileFilterDTO;
+import com.example.Kun_uz.dto.profile.ProfileFilterDTO;
 import com.example.Kun_uz.entity.ProfileEntity;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.Query;
@@ -39,11 +39,11 @@ public class ProfileCustomRepository {
             params.put("role", filter.getRole());
         }
         if (filter.getCreatedDateFrom() != null) {
-            query.append(" and p.created_date>=:created_date_from ");
+            query.append(" and p.createdDate>=:created_date_from ");
             params.put("created_date_from", filter.getCreatedDateFrom());
         }
         if (filter.getCreatedDateTo() != null) {
-            query.append(" and p.created_date<=:created_date_to ");
+            query.append(" and p.createdDate<=:created_date_to ");
             params.put("created_date_to", filter.getCreatedDateTo());
         }
 

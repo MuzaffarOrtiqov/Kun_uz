@@ -1,7 +1,7 @@
 package com.example.Kun_uz.service;
 
 import com.example.Kun_uz.Mapper.RegionMapper;
-import com.example.Kun_uz.createDTO.RegionCreateDTO;
+import com.example.Kun_uz.dto.createDTO.RegionCreateDTO;
 import com.example.Kun_uz.dto.RegionDTO;
 import com.example.Kun_uz.entity.RegionEntity;
 import com.example.Kun_uz.enums.LanguageEnum;

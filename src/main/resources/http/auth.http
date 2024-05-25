@@ -1,0 +1,24 @@
+### Registration
+POST localhost:8080/auth/registration
+Content-Type: application/json
+
+{
+  "name": "Muzaffar",
+  "surname": "Ortiqov",
+  "email": "nonamee132454@gmail.com",
+  "password": "M12345678m!"
+}
+
+### LOGIN
+POST localhost:8080/auth/login
+Content-Type: application/json
+
+{
+  "email": "muzaffarmike2@gmail.com",
+  "password": "M12345678m!"
+}
+
+
+### Resend code
+
+POST localhost:8080/auth/resend?email=noname132454@gmail.com

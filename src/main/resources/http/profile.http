@@ -3,11 +3,12 @@ POST localhost:8080/profile/create
 Content-Type: application/json
 
 {
-  "name": "Doniyor",
-  "surname": "Uktamov",
+  "name": "Alish",
+  "surname": "Aliyev",
   "email": "ortiqovmuzaffar171@gmail.com",
-  "phone": "998942702363"
-
+  "phone": "998942702363",
+  "password": "M12345678m!",
+  "status": "ACTIVE"
 }
 
 ### GET ALL PROFILES
@@ -19,14 +20,19 @@ GET localhost:8080/profile/page?page=1&size=3
 PUT localhost:8080/profile/updatePhoto/2?photo_id=3
 
 ### UPDATE USER BY ADMIN
-PUT localhost:8080/profile/updateForAdmin/
+PUT localhost:8080/profile/updateForAdmin/4
+Content-Type: application/json
+
+{
+  "password": "123"
+}
 
 ### FILTER
 POST localhost:8080/profile/filter?page=1&size=3
 Content-Type: application/json
 
 {
-  "createdDateFrom": "2024-05-21",
-  "createdDateTo": "2024-05-21"
+  "createdDateFrom": "2024-05-20T14:35:42.123",
+  "createdDateTo": "2024-05-22T14:35:42.123"
 }
 

@@ -10,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -22,31 +23,31 @@ public class ProfileEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name")
-    @NotBlank(message = "Name is mandatory")
+  //  @NotBlank(message = "Name is mandatory")
     private String name;
-    @NotBlank(message = "Surname is mandatory")
+//    @NotBlank(message = "Surname is mandatory")
     @Column(name = "surname")
     private String surname;
-    @Email(message = "Email should be valid")
+    //    @Email(message = "Email should be valid")
     @Column(name = "email")
     private String email;
-    @NotBlank(message = "Phone is mandatory")
+    //    @NotBlank(message = "Phone is mandatory")
     @Column(name = "phone")
     private String phone;
-    @NotBlank(message = "Password is mandatory")
+    // @NotBlank(message = "Password is mandatory")
     @Column(name = "password")
     private String password;
     @Column(name = "status")
     @Enumerated(EnumType.STRING)
     private ProfileStatus status;
-    @NotNull(message = "Role should be specified")
+  //  @NotNull(message = "Role should be specified")
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private ProfileRole role;
     @Column(name = "visible")
-    private Boolean visible=Boolean.TRUE;
+    private Boolean visible = Boolean.TRUE;
     @Column(name = "created_date")
-    private LocalDateTime createdDate= LocalDateTime.now();
+    private LocalDateTime createdDate = LocalDateTime.now();
     @Column(name = "photo_id")
     private Integer photoId;
 }

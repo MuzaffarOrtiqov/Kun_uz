@@ -1,4 +1,4 @@
-package com.example.Kun_uz.dto;
+package com.example.Kun_uz.dto.profile;
 
 import com.example.Kun_uz.enums.ProfileRole;
 import com.example.Kun_uz.enums.ProfileStatus;
@@ -7,7 +7,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
-import java.util.UUID;
 
 @Getter
 @Setter

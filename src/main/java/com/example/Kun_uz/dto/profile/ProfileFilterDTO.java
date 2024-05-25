@@ -1,11 +1,10 @@
-package com.example.Kun_uz.dto;
+package com.example.Kun_uz.dto.profile;
 
 import com.example.Kun_uz.enums.ProfileRole;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 @Getter
 @Setter
@@ -16,6 +15,6 @@ public class ProfileFilterDTO {
     private String surname;
     private String phone;
     private ProfileRole role;
-    private LocalDate createdDateFrom ;
-    private LocalDate createdDateTo ;
+    private LocalDateTime createdDateFrom ;
+    private LocalDateTime createdDateTo ;
 }

@@ -1,4 +1,4 @@
-package com.example.Kun_uz.createDTO;
+package com.example.Kun_uz.dto.createDTO;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
@@ -9,13 +9,14 @@ import lombok.Setter;
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoryCreateDTO {
-    @NotNull(message = "Order number is mandatory")
+public class RegionCreateDTO {
+    @NotNull(message = "Order number required")
     private Integer orderNumber;
-    @NotBlank(message = "Name Uz is mandatory")
+    @NotBlank(message = "NameUz required")
     private String nameUz;
-    @NotBlank(message = "Name Ru is mandatory")
+    @NotBlank(message = "NameRu required")
     private String nameRu;
-    @NotBlank(message = "Name En is mandatory")
+    @NotBlank(message = "NameEn required")
     private String nameEn;
+
 }

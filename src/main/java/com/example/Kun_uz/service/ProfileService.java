@@ -1,9 +1,9 @@
 package com.example.Kun_uz.service;
 
-import com.example.Kun_uz.createDTO.ProfileCreateDTo;
+import com.example.Kun_uz.dto.createDTO.ProfileCreateDTo;
 import com.example.Kun_uz.dto.FilterResponseDTO;
-import com.example.Kun_uz.dto.ProfileDTO;
-import com.example.Kun_uz.dto.ProfileFilterDTO;
+import com.example.Kun_uz.dto.profile.ProfileDTO;
+import com.example.Kun_uz.dto.profile.ProfileFilterDTO;
 import com.example.Kun_uz.entity.ProfileEntity;
 import com.example.Kun_uz.exp.ResourceNotFoundException;
 import com.example.Kun_uz.repository.ProfileCustomRepository;

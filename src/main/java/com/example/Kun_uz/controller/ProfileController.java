@@ -1,8 +1,8 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.createDTO.ProfileCreateDTo;
-import com.example.Kun_uz.dto.ProfileDTO;
-import com.example.Kun_uz.dto.ProfileFilterDTO;
+import com.example.Kun_uz.dto.createDTO.ProfileCreateDTo;
+import com.example.Kun_uz.dto.profile.ProfileDTO;
+import com.example.Kun_uz.dto.profile.ProfileFilterDTO;
 import com.example.Kun_uz.service.ProfileService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
-
-import java.util.List;
-
-import static org.apache.logging.log4j.util.LambdaUtil.getAll;
 
 @RequestMapping("/profile")
 @RestController
@@ -26,12 +21,12 @@ public class ProfileController {
         return ResponseEntity.ok().body(profileService.create(profileDTO));
     }
     @PutMapping("/update/{id}")
-    ResponseEntity<ProfileDTO> updateForUser (@Valid Integer id, @RequestBody ProfileCreateDTo profileDTO) {
+    ResponseEntity<ProfileDTO> updateForUser ( @PathVariable  Integer id, @RequestBody ProfileCreateDTo profileDTO) {
         return ResponseEntity.ok().body(profileService.update(id,profileDTO));
 
     }
     @PutMapping("/updateForAdmin/{id}")
-    ResponseEntity<ProfileDTO> updateForAdmin (@Valid Integer id, @RequestBody ProfileDTO profileDTO) {
+    ResponseEntity<ProfileDTO> updateForAdmin ( @PathVariable  Integer id, @RequestBody ProfileDTO profileDTO) {
         return ResponseEntity.ok().body(profileService.updateForAdmin(id,profileDTO));
     }
 

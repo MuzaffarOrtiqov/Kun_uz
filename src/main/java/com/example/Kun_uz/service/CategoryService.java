@@ -2,7 +2,7 @@ package com.example.Kun_uz.service;
 
 
 import com.example.Kun_uz.Mapper.CategoryMapper;
-import com.example.Kun_uz.createDTO.CategoryCreateDTO;
+import com.example.Kun_uz.dto.createDTO.CategoryCreateDTO;
 import com.example.Kun_uz.dto.CategoryDTO;
 import com.example.Kun_uz.entity.CategoryEntity;
 import com.example.Kun_uz.enums.LanguageEnum;

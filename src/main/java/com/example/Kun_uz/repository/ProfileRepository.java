@@ -26,4 +26,6 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer
     int updateStatus(Integer profileId, ProfileStatus status);
 
 
+
+
 }

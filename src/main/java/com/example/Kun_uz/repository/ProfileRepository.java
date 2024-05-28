@@ -19,11 +19,13 @@ public interface ProfileRepository extends CrudRepository<ProfileEntity, Integer
     Page<ProfileEntity> findAll(Pageable pageable);
 
     Optional<ProfileEntity> findByEmailAndVisibleTrue(String email);
+    Optional<ProfileEntity> findByPhoneAndVisibleTrue(String phone);
 
     @Transactional
     @Modifying
     @Query("update ProfileEntity set status =?2 where id =?1")
     int updateStatus(Integer profileId, ProfileStatus status);
+
 
 
 

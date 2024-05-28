@@ -1,0 +1,18 @@
+### Authorization
+POST https://notify.eskiz.uz/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "ortiqovmuzaffar171@gmail.com",
+  "password": "hk2vy0QMIGD4zN6s3esoVqZFm6XxIgBEPzBjknvR"
+}
+### Send sms
+POST https://notify.eskiz.uz/api/message/sms/send
+Content-Type: application/json
+AUTHORIZATION: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MTkyMjI2NjUsImlhdCI6MTcxNjYzMDY2NSwicm9sZSI6InRlc3QiLCJzaWduIjoiMTEyNGNkODM2MGM4MTA3ZmFhZmY5NzJjNTVkZjY4YjVlNDJmZjBlZGJhOTgyZmJhMjNlZTVlMDY3OGExZWU1NyIsInN1YiI6Ijc0MDgifQ.cNNSEESIhVIaV5aTYawizTsQH7Vg113zNJULBZSc4dw
+
+{
+  "mobile_phone": "+998942702363",
+  "message": "YouGo ilovasiga ro'yxatdan o'tishning tasdiqlash kodi: 12345",
+  "from": "4546"
+}

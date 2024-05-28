@@ -1,4 +1,4 @@
-### Registration
+### Registration withe email
 POST localhost:8080/auth/registration
 Content-Type: application/json
 
@@ -9,6 +9,28 @@ Content-Type: application/json
   "password": "M12345678m!"
 }
 
+### Registration with Phone number
+POST localhost:8080/auth/registrationWithPhone
+Content-Type: application/json
+
+{
+  "name": "Muzaffar",
+  "surname": "Ortiqov",
+  "email": "unknown12456@gmail.com",
+  "phone": "998942702363",
+  "password": "M12345678m!"
+}
+
+### Verfication with SMS
+GET localhost:8080/auth/verificationWithSms
+Content-Type: application/json
+
+{
+  "phone": "998942702363",
+  "message": "Bu Eskiz dan test"
+}
+
+
 ### LOGIN
 POST localhost:8080/auth/login
 Content-Type: application/json
@@ -18,7 +40,23 @@ Content-Type: application/json
   "password": "M12345678m!"
 }
 
+### LOGIN WITH PHONE NUMBER
+POST localhost:8080/auth/loginWithPhone
+Content-Type: application/json
+
+{
+  "phone": "998942702363",
+  "password": "M12345678m!"
+}
+
+### Resend Email
+
+POST localhost:8080/auth/resendEmail?email=unknown1245@gmail.com
+
 
 ### Resend code
 
-POST localhost:8080/auth/resend?email=noname132454@gmail.com
+POST localhost:8080/auth/resendCode?phone=998942702363
+
+
+

@@ -4,10 +4,12 @@ import com.example.Kun_uz.dto.createDTO.ProfileCreateDTo;
 import com.example.Kun_uz.dto.FilterResponseDTO;
 import com.example.Kun_uz.dto.profile.ProfileDTO;
 import com.example.Kun_uz.dto.profile.ProfileFilterDTO;
+import com.example.Kun_uz.dto.profile.ProfileUpdateDTO;
 import com.example.Kun_uz.entity.ProfileEntity;
 import com.example.Kun_uz.exp.ResourceNotFoundException;
 import com.example.Kun_uz.repository.ProfileCustomRepository;
 import com.example.Kun_uz.repository.ProfileRepository;
+import com.example.Kun_uz.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -34,7 +36,7 @@ public class ProfileService {
         profileEntity.setSurname(profileDTO.getSurname());
         profileEntity.setEmail(profileDTO.getEmail());
         profileEntity.setPhone(profileDTO.getPhone());
-        profileEntity.setPassword(profileDTO.getPassword());
+        profileEntity.setPassword(MD5Util.getMD5(profileDTO.getPassword()));
         profileEntity.setStatus(profileDTO.getStatus());
         profileEntity.setRole(profileDTO.getRole());
 
@@ -72,19 +74,18 @@ public class ProfileService {
         return profileDTO;
     }
 
-    public ProfileDTO update(Integer id, ProfileCreateDTo profileDTO) {
+    public Boolean update(Integer id, ProfileUpdateDTO profileDTO) {
+
         ProfileEntity profileEntity = get(id);
         profileEntity.setName(profileDTO.getName());
         profileEntity.setSurname(profileDTO.getSurname());
-        profileEntity.setEmail(profileDTO.getEmail());
-        profileEntity.setPhone(profileDTO.getPhone());
-        profileEntity.setPassword(profileDTO.getPassword());
+
         profileRepository.save(profileEntity);
-        return toDTOUser(profileEntity);
+        return true;
     }
 
-     public ProfileDTO  updateForAdmin (Integer id, ProfileDTO profileDTO) {
-        ProfileEntity profileEntity = get(id);
+     public ProfileDTO  updateForAdmin (Integer userId, ProfileDTO profileDTO) {
+        ProfileEntity profileEntity = get(userId);
         profileEntity.setName(profileDTO.getName());
         profileEntity.setSurname(profileDTO.getSurname());
         profileEntity.setEmail(profileDTO.getEmail());

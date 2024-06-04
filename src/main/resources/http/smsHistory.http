@@ -1,0 +1,15 @@
+### GET SMS HISTORY
+GET localhost:8080/smsHistory/getByPhone?phone=998942702363
+Authorization: Basic YWRtaW46YWRtaW5qb24=
+
+
+### GET SMS HISTORY BY GIVEN DATE
+
+GET localhost:8080/smsHistory/getSmsByGivenDate?given_date=2024-06-01
+Authorization: Basic YWRtaW46YWRtaW5qb24=
+
+
+### PAGINATION
+
+POST localhost:8080/smsHistory/pagination?page=1&size=3
+Authorization: Basic YWRtaW46YWRtaW5qb24=

@@ -1,12 +1,15 @@
 ### GET EMAIL HISTORY
-GET localhost:8080/email/getByEmail?email=muzaffarmike2@gmail.com
+GET localhost:8080/emailHistory/getByEmail?email=muzaffarmike2@gmail.com
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 
 ### GET EMAIL HISTORY BY GIVEN DATE
 
-GET localhost:8080/email/getEmailByGivenDate?given_date=2024-05-25
+GET localhost:8080/emailHistory/getEmailByGivenDate?given_date=2024-06-01
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 
 ### PAGINATION
 
-POST localhost:8080/email/pagination?page=1&size=3
+POST localhost:8080/emailHistory/pagination?page=1&size=3
+Authorization: Basic YWRtaW46YWRtaW5qb24=

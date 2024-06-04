@@ -1,21 +1,19 @@
 package com.example.Kun_uz.dto.auth;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegistrationDTO {
-    @NotBlank
+
     private String name;
-    @NotBlank
     private String surname;
-    @NotBlank
     private String email;
-    @NotBlank
     private String password;
-    @NotBlank
     private String phone;
     
 }

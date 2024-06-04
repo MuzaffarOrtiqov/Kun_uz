@@ -1,11 +1,11 @@
-### Registration withe email
-POST localhost:8080/auth/registration
+### Registration with email
+POST localhost:8080/auth/registrationWithEmail
 Content-Type: application/json
 
 {
   "name": "Muzaffar",
   "surname": "Ortiqov",
-  "email": "nonamee132454@gmail.com",
+  "email": "e@gmail.com",
   "password": "M12345678m!"
 }
 
@@ -16,7 +16,7 @@ Content-Type: application/json
 {
   "name": "Muzaffar",
   "surname": "Ortiqov",
-  "email": "unknown12456@gmail.com",
+  "email": "muzaffarmike2@gmail.com",
   "phone": "998942702363",
   "password": "M12345678m!"
 }
@@ -31,9 +31,10 @@ Content-Type: application/json
 }
 
 
-### LOGIN
-POST localhost:8080/auth/login
+### LOGIN WITH EMAIL
+POST localhost:8080/auth/loginWithEmail
 Content-Type: application/json
+
 
 {
   "email": "muzaffarmike2@gmail.com",
@@ -44,6 +45,7 @@ Content-Type: application/json
 POST localhost:8080/auth/loginWithPhone
 Content-Type: application/json
 
+
 {
   "phone": "998942702363",
   "password": "M12345678m!"
@@ -51,12 +53,23 @@ Content-Type: application/json
 
 ### Resend Email
 
-POST localhost:8080/auth/resendEmail?email=unknown1245@gmail.com
+POST localhost:8080/auth/resendEmail
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTcwNjM0MzEsImlkIjoxMywicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcxNzE0OTgzMSwiaXNzIjoiS3VuVXpUZXN0In0.TpnlcQs8OOBxVowmvBqHnpeiounmjYthA_-Oe1eJqwTklukugKDOiW-LEPtefw6rY6jEpOUxUaVD01smnaKFXA
 
 
 ### Resend code
 
 POST localhost:8080/auth/resendCode?phone=998942702363
+
+
+### VERIFICATION WITH EMAIL
+
+GET localhost:8080/auth/verificationWithEmail/eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTcwNTU3MzAsImlkIjoxMiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcxNzE0MjEzMCwiaXNzIjoiS3VuVXpUZXN0In0.Brx0UgHTOcfEx9rAeX4jQIXAWYX8YsLt7p-EZD0uCZg90QeknvEUWrrYoQmCJWTsFRwIboaCHc_b4DlctGBoRQ
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTcwNTU3MzAsImlkIjoxMiwicm9sZSI6IlJPTEVfVVNFUiIsImV4cCI6MTcxNzE0MjEzMCwiaXNzIjoiS3VuVXpUZXN0In0.Brx0UgHTOcfEx9rAeX4jQIXAWYX8YsLt7p-EZD0uCZg90QeknvEUWrrYoQmCJWTsFRwIboaCHc_b4DlctGBoRQ
+
+
+
+
 
 
 

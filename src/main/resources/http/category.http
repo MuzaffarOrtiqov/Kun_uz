@@ -1,6 +1,7 @@
 ### CREATE CATEGORY
-POST localhost:8080/category/create
+POST localhost:8080/category/adm/create
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 {
   "orderNumber": 4,
@@ -10,8 +11,9 @@ Content-Type: application/json
 }
 
 ### UPDATE CATEGORY
-PUT localhost:8080/category/update/4
+PUT localhost:8080/category/adm/update/2
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 {
   "orderNumber": 4,
@@ -21,11 +23,14 @@ Content-Type: application/json
 }
 
 ### DELETE BY ID
-DELETE localhost:8080/category/delete/4
+DELETE localhost:8080/category/adm/delete/2
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 ### GET ALL CATEGORIES
-GET localhost:8080/category/all
+GET localhost:8080/category/adm/all
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 ### GET ALL BY LANGUAGE
-GET localhost:8080/category/allWithLang
+GET localhost:8080/category/lang
 Accept-Language: EN
+Authorization: Basic TXV6YWZmYXI6bXV6YWZmYXI=

@@ -1,14 +1,36 @@
 ### REGION CREATE
-POST localhost:8080/region/create
+POST localhost:8080/region/adm/create
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 {
-  "orderNumber": 1,
-  "nameUz": "Region1 uz",
-  "nameEn": "Region1 en",
-  "nameRu": "Region1 ru"
+  "orderNumber": 4,
+  "nameUz": "Region4 uz",
+  "nameEn": "Region4 en",
+  "nameRu": "Region4 ru"
 }
+
+### REGION UPDATE BY ID
+PUT localhost:8080/region/adm/update/2
+Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5qb24=
+
+{
+  "orderNumber": 4,
+  "nameUz": "Region4 uz",
+  "nameEn": "Region4 en",
+  "nameRu": "Region4 ru"
+}
+
+### REGION DELETE BY ID
+DELETE localhost:8080/region/adm/delete/4
+Authorization: Basic YWRtaW46YWRtaW5qb24=
+
+####REGION GET ALL
+GET localhost:8080/region/adm/all
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 ### GET ALL BY LANG
 GET localhost:8080/region/lang
 Accept-Language: UZ
+Authorization: Basic TXV6YWZmYXI6bXV6YWZmYXI=

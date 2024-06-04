@@ -51,7 +51,11 @@ public class EmailHistoryService {
         }
     }
 
+
     public void isNotExpiredEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            throw new AppBadException("Invalid email");
+        }
         Optional<EmailHistoryEntity> optional = emailHistoryRepository.findByEmail(email);
         if (optional.isEmpty()) {
             throw new AppBadException("Email history not found");

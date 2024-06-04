@@ -1,10 +1,13 @@
 package com.example.Kun_uz.controller;
 
 import com.example.Kun_uz.dto.SmsHistoryDTO;
-import com.example.Kun_uz.dto.auth.EmailLoginDTO;
+import com.example.Kun_uz.dto.auth.AuthDTO;
+import com.example.Kun_uz.dto.auth.JwtDTO;
 import com.example.Kun_uz.dto.auth.RegistrationDTO;
 import com.example.Kun_uz.dto.auth.SmsLoginDTO;
+import com.example.Kun_uz.dto.profile.ProfileDTO;
 import com.example.Kun_uz.service.AuthService;
+import com.example.Kun_uz.util.SecurityUtil;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,8 +19,9 @@ public class AuthController {
     @Autowired
     private AuthService authService;
     // Registration with email
+
     @PostMapping("/registrationWithEmail")
-    public ResponseEntity<String> registrationWithEmail(@Valid @RequestBody RegistrationDTO dto) {
+    public ResponseEntity<String> registration( @RequestBody RegistrationDTO dto) {
         String body = authService.registrationWithEmail(dto);
         return ResponseEntity.ok().body(body);
     }
@@ -30,9 +34,10 @@ public class AuthController {
     }
 
     //Verfication of a user
-    @GetMapping("/verificationWithEmail/{userId}")
-    public ResponseEntity<String> verification(@PathVariable("userId") Integer userId) {
-        String body = authService.authorizationVerification(userId);
+    @GetMapping("/verificationWithEmail/{token}")
+    public ResponseEntity<String> verification(@RequestHeader("Authorization") String token) {
+       JwtDTO dto =  SecurityUtil.getJwtDTO(token);
+        String body = authService.authorizationVerification(dto.getId());
         return ResponseEntity.ok().body(body);
     }
     // Verification with Sms
@@ -54,8 +59,8 @@ public class AuthController {
     }
     // Log in process if a user has created an account earlier
     @PostMapping("/loginWithEmail")
-    public ResponseEntity<String> loginWithEmail (@Valid @RequestBody EmailLoginDTO dto) {
-        return ResponseEntity.ok().body(authService.login(dto));
+    public ResponseEntity<ProfileDTO> loginWithEmail (@Valid @RequestBody AuthDTO dto) {
+        return ResponseEntity.ok().body(authService.loginWithEmail(dto));
     }
     @PostMapping("/loginWithPhone")
     public ResponseEntity<String> loginWithPhone (@Valid @RequestBody SmsLoginDTO dto) {

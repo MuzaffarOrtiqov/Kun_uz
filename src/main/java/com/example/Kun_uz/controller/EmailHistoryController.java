@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@RequestMapping("/email")
+@RequestMapping("/emailHistory")
 @RestController
 public class EmailHistoryController {
     @Autowired

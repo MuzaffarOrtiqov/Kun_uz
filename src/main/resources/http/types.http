@@ -1,17 +1,19 @@
 ### CREATE TYPES
-POST localhost:8080/types/create
+POST localhost:8080/types/adm/create
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 {
-  "orderNumber": 3,
-  "nameUz":"Type3 uz ",
-  "nameRu":"Type3 ru",
-  "nameEn":"Type3 en"
+  "orderNumber": 1,
+  "nameUz":"Type1 uz ",
+  "nameRu":"Type1 ru",
+  "nameEn":"Type1 en"
 }
 
 ### UPADTE TYPES
-PUT localhost:8080/types/update/3
+PUT localhost:8080/types/adm/update/3
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 {
 
@@ -22,13 +24,18 @@ Content-Type: application/json
 }
 
 ### DELETE TYPES
-DELETE localhost:8080/types/delete/3
+DELETE localhost:8080/types/adm/delete/3
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 ### PAGINATION
-POST localhost:8080/types/all?page=1&size=3
-
-### PAGINATION WITH
-POST localhost:8080/types/paginationByLanguage/?language="name_uz"&page=1&size=3
+POST localhost:8080/types/adm/all?page=1&size=3
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 ### GET BY LANGUAGE
-GET localhost:8080/types/getByLanguage
+GET localhost:8080/types/lang
+Accept-Language: EN
+Authorization: Basic YWRtaW46YWRtaW5qb24=
+
+
+
+

@@ -20,28 +20,28 @@ public class TypesController {
     //  order_number,name_uz, name_ru, name_en
     @Autowired
     private TypesService typesService;
-    @PostMapping("/create")
+    @PostMapping("/adm/create")
     public ResponseEntity<TypesDTO> create(@Valid @RequestBody TypeCreateDTO typeCreateDTO) {
       TypesDTO response = typesService.create(typeCreateDTO);
       return ResponseEntity.ok().body(response);
     }
-    @PutMapping("/update/{id}")
+    @PutMapping("/adm/update/{id}")
     public ResponseEntity<TypesDTO> update(@PathVariable Integer id, @Valid @RequestBody TypeCreateDTO dto) {
        TypesDTO response =  typesService.update(id,dto);
        return ResponseEntity.ok().body(response);
     }
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/adm/delete/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Integer id) {
         Boolean response = typesService.delete(id);
         return ResponseEntity.ok().body(response);
     }
-    @PostMapping("/all")
+    @PostMapping("/adm/all")
     public ResponseEntity<PageImpl<TypesDTO>> pagination(@Valid @RequestParam (name = "page", defaultValue = "1")int page,
                                                      @Valid @RequestParam (name = "size",defaultValue = "10")int size) {
       PageImpl<TypesDTO>  pages = typesService.findAll(page-1,size);
       return ResponseEntity.ok().body(pages);
     }
-    @GetMapping("/getByLanguage")
+    @GetMapping("/lang")
     public ResponseEntity<List<TypesDTO>> getByLanguage(@RequestHeader (name = "Accept-Language",defaultValue = "UZ")LanguageEnum lang) {
         List<TypesDTO> response = typesService.getByLanguage(lang);
         return ResponseEntity.ok().body(response);

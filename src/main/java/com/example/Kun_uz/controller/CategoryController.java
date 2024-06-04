@@ -16,26 +16,26 @@ import java.util.List;
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;
-    @PostMapping("/create")
+    @PostMapping("/adm/create")
     public ResponseEntity<CategoryDTO> createCategory(@Valid @RequestBody CategoryCreateDTO categoryCreateDTO) {
         CategoryDTO categoryDTO = categoryService.createCategory(categoryCreateDTO);
         return ResponseEntity.ok().body(categoryDTO);
     }
-    @PutMapping("/update/{id}")
+    @PutMapping("/adm/update/{id}")
     public ResponseEntity<CategoryDTO> updateCategory (@PathVariable Integer id,
                                                        @Valid @RequestBody CategoryCreateDTO dto){
         CategoryDTO response =categoryService.updateCategory(id,dto);
         return ResponseEntity.ok().body(response);
     }
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/adm/delete/{id}")
     public ResponseEntity<Boolean> deleteCategory (@PathVariable Integer id){
         return ResponseEntity.ok().body(categoryService.deleteCategory(id));
     }
-    @GetMapping("/all")
+    @GetMapping("/adm/all")
     public ResponseEntity<List<CategoryDTO>> getAllCategory(){
        return ResponseEntity.ok().body(categoryService.getAllCategories()) ;
     }
-    @GetMapping("/allWithLang")
+    @GetMapping("/lang")
     public ResponseEntity<List<CategoryDTO>> findAllWithLang(@RequestHeader (name = "Accept-Language",defaultValue = "UZ")LanguageEnum lang){
         return ResponseEntity.ok().body(categoryService.getCategoryByLanguage(lang));
     }

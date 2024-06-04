@@ -1,38 +1,43 @@
 ### CREATE PROFILE
-POST localhost:8080/profile/create
+POST localhost:8080/profile/adm/create
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTcyNTk1ODYsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE3MzQ1OTg2LCJpc3MiOiJLdW5VelRlc3QifQ.986iykakAM5PrYDprdxBnG7liDV8seuJQj9IGXDBY6k0OFwZZDoM7c9O9bAb4vzD3Z1E9f3UzZ-hMUlXKJ_hIQ
 
 {
   "name": "Alish",
   "surname": "Aliyev",
-  "email": "ortiqovmuzaffar171@gmail.com",
-  "phone": "998942702363",
-  "password": "M12345678m!",
-  "status": "ACTIVE"
+  "email": "ortiqovmuzaaaffar171@gmail.com",
+  "phone": "998942702063",
+  "password": "M12345678m!"
+
 }
 
 ### GET ALL PROFILES
-GET localhost:8080/profile/page?page=1&size=3
+GET localhost:8080/profile/adm/page?page=1&size=3
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 
 ### UPDATE PROFILE PHOTO
 
-PUT localhost:8080/profile/updatePhoto/2?photo_id=3
+PUT localhost:8080/profile/updatePhoto/17?photo_id=3
+Authorization: Basic TXV6YWZmYXI6bXV6YWZmYXI=
 
-### UPDATE USER BY ADMIN
-PUT localhost:8080/profile/updateForAdmin/4
+### UPDATE USER
+PUT localhost:8080/profile/current/17
 Content-Type: application/json
+Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 {
-  "password": "123"
+  "name": "Mike",
+  "surname": "Black"
 }
 
 ### FILTER
-POST localhost:8080/profile/filter?page=1&size=3
+POST localhost:8080/profile/adm/filter?page=1&size=3
 Content-Type: application/json
+Authorization: Basic TXV6YWZmYXI6bXV6YWZmYXI=
 
 {
-  "createdDateFrom": "2024-05-20T14:35:42.123",
-  "createdDateTo": "2024-05-22T14:35:42.123"
+  "name": "Muzaffar"
 }
 

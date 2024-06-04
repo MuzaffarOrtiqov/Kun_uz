@@ -1,9 +1,10 @@
 package com.example.Kun_uz.service;
 
 import com.example.Kun_uz.dto.SmsHistoryDTO;
-import com.example.Kun_uz.dto.auth.EmailLoginDTO;
+import com.example.Kun_uz.dto.auth.AuthDTO;
 import com.example.Kun_uz.dto.auth.RegistrationDTO;
 import com.example.Kun_uz.dto.auth.SmsLoginDTO;
+import com.example.Kun_uz.dto.profile.ProfileDTO;
 import com.example.Kun_uz.entity.ProfileEntity;
 import com.example.Kun_uz.entity.SmsHistoryEntity;
 import com.example.Kun_uz.enums.ProfileRole;
@@ -11,6 +12,7 @@ import com.example.Kun_uz.enums.ProfileStatus;
 import com.example.Kun_uz.exp.AppBadException;
 import com.example.Kun_uz.repository.ProfileRepository;
 import com.example.Kun_uz.repository.SmsHistoryRepository;
+import com.example.Kun_uz.util.JWTUtil;
 import com.example.Kun_uz.util.MD5Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +41,7 @@ public class AuthService {
         if (optional.isPresent()) {
             throw new AppBadException("Email already exists");
         }
+
         ProfileEntity entity = new ProfileEntity();
         entity.setName(dto.getName());
         entity.setSurname(dto.getSurname());
@@ -88,37 +91,47 @@ public class AuthService {
         }
 
         ProfileEntity entity = optional.get();
-
-        emailHistoryService.isNotExpiredEmail(entity.getEmail());// check for expireation date
-
         if (!entity.getVisible() || !entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
             throw new AppBadException("Registration not completed");
         }
-
+   //     emailHistoryService.isNotExpiredEmail(entity.getEmail());// check for expiration date
         profileRepository.updateStatus(userId, ProfileStatus.ACTIVE);
         return "Success";
     }
 
+
+
     //Login for registered users
-    public String login(EmailLoginDTO dto) {
-        Optional<ProfileEntity> optional = profileRepository.findByEmailAndVisibleTrue(dto.getEmail());
+    public ProfileDTO loginWithEmail(AuthDTO authDTO) {
+        Optional<ProfileEntity> optional = profileRepository.findByEmailAndVisibleTrue(authDTO.getEmail());
         if (optional.isEmpty()) {
             throw new AppBadException("User not found");
         }
         ProfileEntity entity = optional.get();
-        if (!entity.getPassword().equals(MD5Util.getMD5(dto.getPassword()))) {
+        if (!entity.getPassword().equals(MD5Util.getMD5(authDTO.getPassword()))) {
             throw new AppBadException("Wrong password");
         }
-        if (entity.getStatus().equals(ProfileStatus.NOT_ACTIVE) || entity.getStatus().equals(ProfileStatus.REGISTRATION)) {
-            throw new AppBadException("User should be  active");
+        if (entity.getStatus() != ProfileStatus.ACTIVE) {
+            throw new AppBadException("User is not active");
         }
-        return "Success";
+        ProfileDTO dto = new ProfileDTO();
+//        dto.setId(entity.getId());
+        dto.setName(entity.getName());
+        dto.setSurname(entity.getSurname());
+        dto.setEmail(entity.getEmail());
+        dto.setPhone(entity.getPhone());
+        dto.setRole(entity.getRole());
+//      dto.setStatus(entity.getStatus());
+        dto.setJwt(JWTUtil.encode(entity.getId(), entity.getEmail(), entity.getRole()));
+        return dto;
     }
+
 
     // send email for user's in registration process
     public void sendRegistrationEmail(Integer profileId, String email) {
         // send email
-        String url = "http://localhost:8080/auth/verification/" + profileId;
+   //     String token = JWTUtil.encode(profileId, ProfileRole.ROLE_USER);
+        String url = "http://localhost:8080/auth/verificationWithEmail/" + profileId;
         String formatText = "<style>\n" +
                 "    a:link, a:visited {\n" +
                 "        background-color: #f44336;\n" +
@@ -157,6 +170,7 @@ public class AuthService {
         }
         emailHistoryService.checkEmailLimit(email);
         sendRegistrationEmail(entity.getId(), email);
+
         return "To complete your registration please verify your email!";
     }
 

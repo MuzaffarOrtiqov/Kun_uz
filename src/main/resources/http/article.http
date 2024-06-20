@@ -1,0 +1,63 @@
+### CREATE ARTICLE
+POST localhost:8080/article/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTgyNTQxNTIsImlkIjoxNywidXNlcm5hbWUiOiJvcnRpcW92bXV6YWZmYXIxNzFAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfTU9ERVJBVE9SIiwiZXhwIjoxNzE4MzQwNTUyLCJpc3MiOiJLdW5VelRlc3QifQ.X-m8jjV3B8njU8tOFNRVXvUlmLftdqRvegh2J_Psq1qYaq8GT9T_Q4Y9GjbfgynD1Urt6Esrk9bf-WAXBFnVjw
+
+{
+  "title": "Title2",
+  "description": "Description2",
+  "content": "Content2",
+  "imageId": "1c4df24a-74f4-412d-acc9-709d2d56b0d4.jpg",
+  "regionId": 3,
+  "categoryId": 1,
+  "types": [1,2]
+
+}
+
+
+### UPDATE ARTICLE
+PUT localhost:8080/article/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTgyNTQxNTIsImlkIjoxNywidXNlcm5hbWUiOiJvcnRpcW92bXV6YWZmYXIxNzFAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfTU9ERVJBVE9SIiwiZXhwIjoxNzE4MzQwNTUyLCJpc3MiOiJLdW5VelRlc3QifQ.X-m8jjV3B8njU8tOFNRVXvUlmLftdqRvegh2J_Psq1qYaq8GT9T_Q4Y9GjbfgynD1Urt6Esrk9bf-WAXBFnVjw
+
+{
+  "articleId": "87365c73-b45d-4e56-96df-67c35877c375",
+  "title": "Title3",
+  "description": "Description3",
+  "content": "Content3",
+  "imageId": "eba4e39f-cf54-4d27-be40-3bce4a9cc008.jpg",
+  "regionId": 1,
+  "categoryId": 1,
+  "types": [1,2]
+
+}
+
+### DELETE ARTICLE
+DELETE localhost:8080/article/delete?articleId=87365c73-b45d-4e56-96df-67c35877c375
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTgyNTQxNTIsImlkIjoxNywidXNlcm5hbWUiOiJvcnRpcW92bXV6YWZmYXIxNzFAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfTU9ERVJBVE9SIiwiZXhwIjoxNzE4MzQwNTUyLCJpc3MiOiJLdW5VelRlc3QifQ.X-m8jjV3B8njU8tOFNRVXvUlmLftdqRvegh2J_Psq1qYaq8GT9T_Q4Y9GjbfgynD1Urt6Esrk9bf-WAXBFnVjw
+
+
+### CHANGE ARTICLE STATUS
+PUT localhost:8080/article/changeStatus?articleId=87365c73-b45d-4e56-96df-67c35877c375
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTgyNzA0MDksImlkIjoxOSwidXNlcm5hbWUiOiJtdXphZmZhcnJybWlrZTJAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfUFVCTElTSCIsImV4cCI6MTcxODM1NjgwOSwiaXNzIjoiS3VuVXpUZXN0In0.DyRu6yUG2KC7weJb-9d9gVRLMEv_-Z__IZG2I3Ykgwd711Y6QoHQrpNRaqKdFevBwZS0uVROsqSEk1VlNhADEA
+
+### GET LAST FIVE ARTICLES
+GET localhost:8080/article/getLast5?typesId=1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg3Njc0OTgsImlkIjoxOSwidXNlcm5hbWUiOiJtdXphZmZhcnJybWlrZTJAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfUFVCTElTSCIsImV4cCI6MTcxODg1Mzg5OCwiaXNzIjoiS3VuVXpUZXN0In0.WkZ1mXJu4rQFTYrZlVj3mBNBmKQM1CVDmmXjL45gpuA8fj1KlHF7xlkgxpsiRw7m3VRnx0WGp1POjpKpOVrzhw
+
+### GET LAST FIVE ARTICLES
+GET localhost:8080/article/getLast3?typesId=1
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTgzNDU1MDAsImlkIjoxOSwidXNlcm5hbWUiOiJtdXphZmZhcnJybWlrZTJAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfUFVCTElTSCIsImV4cCI6MTcxODQzMTkwMCwiaXNzIjoiS3VuVXpUZXN0In0.WwzWeGtzsWKI-L3KzbPQx0_I3jb56lKyAa4Kl3nbL2G4gnFM0drk0S04Cx0Jgg9UqO2pZ9le21R6tZPsZx4Rew
+
+### GET 8 Articles Not in
+POST localhost:8080/article/last/eight
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg3Njc0OTgsImlkIjoxOSwidXNlcm5hbWUiOiJtdXphZmZhcnJybWlrZTJAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfUFVCTElTSCIsImV4cCI6MTcxODg1Mzg5OCwiaXNzIjoiS3VuVXpUZXN0In0.WkZ1mXJu4rQFTYrZlVj3mBNBmKQM1CVDmmXjL45gpuA8fj1KlHF7xlkgxpsiRw7m3VRnx0WGp1POjpKpOVrzhw
+
+{
+  "articleIds": ["88d8147c-ef28-4a04-b222-3423f71a314e","87365c73-b45d-4e56-96df-67c35877c375"]
+}
+
+### GET 4 ARTICLES EXCEPT A GIVEN ARTICLE
+GET localhost:8080/article/types/last/four?typesId=1 & articleId="88d8147c-ef28-4a04-b222-3423f71a314e"
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg3Njc0OTgsImlkIjoxOSwidXNlcm5hbWUiOiJtdXphZmZhcnJybWlrZTJAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfUFVCTElTSCIsImV4cCI6MTcxODg1Mzg5OCwiaXNzIjoiS3VuVXpUZXN0In0.WkZ1mXJu4rQFTYrZlVj3mBNBmKQM1CVDmmXjL45gpuA8fj1KlHF7xlkgxpsiRw7m3VRnx0WGp1POjpKpOVrzhw

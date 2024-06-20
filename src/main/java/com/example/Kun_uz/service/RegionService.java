@@ -1,8 +1,8 @@
 package com.example.Kun_uz.service;
 
 import com.example.Kun_uz.Mapper.RegionMapper;
-import com.example.Kun_uz.dto.createDTO.RegionCreateDTO;
-import com.example.Kun_uz.dto.RegionDTO;
+import com.example.Kun_uz.dto.region.RegionCreateDTO;
+import com.example.Kun_uz.dto.region.RegionDTO;
 import com.example.Kun_uz.entity.RegionEntity;
 import com.example.Kun_uz.enums.LanguageEnum;
 import com.example.Kun_uz.exp.AppBadException;
@@ -76,6 +76,18 @@ public class RegionService {
         return dtoList;
     }
 
+    public RegionDTO getRegion (Integer id, LanguageEnum lang) {
+        RegionEntity entity = get(id);
+        RegionDTO dto = new RegionDTO();
+        dto.setId(entity.getId());
+        switch (lang) {
+            case EN -> dto.setNameEn(entity.getNameEn());
+            case RU -> dto.setNameRu(entity.getNameRu());
+            default -> dto.setNameUz(entity.getNameUz());
+        }
+        return dto;
+    }
+
     public List<RegionDTO> getAllByLang2(LanguageEnum lang) {
         List<RegionMapper> mapperList = regionRepository.findAll(lang.name());
         List<RegionDTO> dtoList = new LinkedList<>();
@@ -87,6 +99,8 @@ public class RegionService {
         }
         return dtoList;
     }
+
+
 
     public RegionDTO toDTO(RegionEntity entity) {
         RegionDTO dto = new RegionDTO();

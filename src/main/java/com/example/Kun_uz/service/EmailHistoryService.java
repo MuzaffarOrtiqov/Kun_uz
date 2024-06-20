@@ -1,7 +1,7 @@
 package com.example.Kun_uz.service;
 
 
-import com.example.Kun_uz.dto.EmailHistoryDTO;
+import com.example.Kun_uz.dto.history.EmailHistoryDTO;
 import com.example.Kun_uz.entity.EmailHistoryEntity;
 import com.example.Kun_uz.exp.AppBadException;
 import com.example.Kun_uz.repository.EmailHistoryRepository;

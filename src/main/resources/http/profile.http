@@ -35,7 +35,7 @@ Authorization: Basic YWRtaW46YWRtaW5qb24=
 ### FILTER
 POST localhost:8080/profile/adm/filter?page=1&size=3
 Content-Type: application/json
-Authorization: Basic TXV6YWZmYXI6bXV6YWZmYXI=
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg3Njc0OTgsImlkIjoxOSwidXNlcm5hbWUiOiJtdXphZmZhcnJybWlrZTJAZ21haWwuY29tIiwicm9sZSI6IlJPTEVfUFVCTElTSCIsImV4cCI6MTcxODg1Mzg5OCwiaXNzIjoiS3VuVXpUZXN0In0.WkZ1mXJu4rQFTYrZlVj3mBNBmKQM1CVDmmXjL45gpuA8fj1KlHF7xlkgxpsiRw7m3VRnx0WGp1POjpKpOVrzhw
 
 {
   "name": "Muzaffar"

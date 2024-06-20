@@ -1,0 +1,10 @@
+### LEAVE A REACTION
+POST localhost:8080/comment/reaction
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg5NTIwOTMsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE5MDM4NDkzLCJpc3MiOiJLdW5VelRlc3QifQ.zcOTJw0s9c88SVWLeW9l4JtOQFqXW4o4qjAYw_JHUS7Q3Lt0BkT6Vec3Ur2HR3cunQ-D-u33zO4eU1tssHG5sw
+
+{
+  "commentId": 5,
+  "profileId":15,
+  "reaction": "LIKE"
+}

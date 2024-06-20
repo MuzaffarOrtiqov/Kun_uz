@@ -1,7 +1,7 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.createDTO.TypeCreateDTO;
-import com.example.Kun_uz.dto.TypesDTO;
+import com.example.Kun_uz.dto.types.TypeCreateDTO;
+import com.example.Kun_uz.dto.types.TypesDTO;
 import com.example.Kun_uz.enums.LanguageEnum;
 import com.example.Kun_uz.service.TypesService;
 import jakarta.validation.Valid;

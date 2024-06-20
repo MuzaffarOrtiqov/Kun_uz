@@ -1,7 +1,6 @@
 ### CREATE TYPES
 POST localhost:8080/types/adm/create
 Content-Type: application/json
-Authorization: Basic YWRtaW46YWRtaW5qb24=
 
 {
   "orderNumber": 1,

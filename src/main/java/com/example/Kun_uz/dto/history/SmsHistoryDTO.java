@@ -1,4 +1,4 @@
-package com.example.Kun_uz.dto;
+package com.example.Kun_uz.dto.history;
 
 import com.example.Kun_uz.enums.SmsStatus;
 import com.fasterxml.jackson.annotation.JsonInclude;

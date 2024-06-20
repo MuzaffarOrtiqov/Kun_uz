@@ -1,21 +1,16 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.auth.JwtDTO;
-import com.example.Kun_uz.dto.createDTO.ProfileCreateDTo;
+import com.example.Kun_uz.dto.profile.ProfileCreateDTo;
 import com.example.Kun_uz.dto.profile.ProfileDTO;
 import com.example.Kun_uz.dto.profile.ProfileFilterDTO;
 import com.example.Kun_uz.dto.profile.ProfileUpdateDTO;
-import com.example.Kun_uz.enums.ProfileRole;
 import com.example.Kun_uz.service.ProfileService;
-import com.example.Kun_uz.util.HttpRequestUtil;
-import com.example.Kun_uz.util.JWTUtil;
-import com.example.Kun_uz.util.SecurityUtil;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/profile")
@@ -65,6 +60,7 @@ public class ProfileController {
     }
 
     @PostMapping("/adm/filter")
+    @PreAuthorize("hasRole('ROLE_ADMIN ')")
     public ResponseEntity<PageImpl<ProfileDTO>> filter(@RequestParam(value = "page", defaultValue = "1") int page,
                                                        @RequestParam(value = "size", defaultValue = "10") int size,
                                                        @RequestBody ProfileFilterDTO filter) {

@@ -1,6 +1,6 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.EmailHistoryDTO;
+import com.example.Kun_uz.dto.history.EmailHistoryDTO;
 import com.example.Kun_uz.service.EmailHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -8,7 +8,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.List;
 
 @RequestMapping("/emailHistory")

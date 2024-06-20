@@ -1,4 +1,4 @@
-package com.example.Kun_uz.dto.createDTO;
+package com.example.Kun_uz.dto.category;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.NotBlank;

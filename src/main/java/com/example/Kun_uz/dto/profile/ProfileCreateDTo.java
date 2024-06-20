@@ -1,4 +1,4 @@
-package com.example.Kun_uz.dto.createDTO;
+package com.example.Kun_uz.dto.profile;
 
 import com.example.Kun_uz.enums.ProfileRole;
 import com.example.Kun_uz.enums.ProfileStatus;

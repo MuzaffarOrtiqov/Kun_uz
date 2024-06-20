@@ -1,0 +1,48 @@
+### CREATE COMMENT
+POST localhost:8080/comment/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg3ODgzNzAsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE4ODc0NzcwLCJpc3MiOiJLdW5VelRlc3QifQ.3iSLChZaS6gbmA_s0lhRoDjksS735-wWB-70lHD4kpFw60nqq41iH6tiVoHhCFFane1B4ABFIT0Id6MefiVUCw
+
+{
+  "content": "Kimlar bilan ?",
+  "articleId": "87365c73-b45d-4e56-96df-67c35877c375",
+  "replyId": 3
+}
+
+### UPDATE COMMENT
+PUT localhost:8080/comment/update/5
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg3ODgzNzAsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE4ODc0NzcwLCJpc3MiOiJLdW5VelRlc3QifQ.3iSLChZaS6gbmA_s0lhRoDjksS735-wWB-70lHD4kpFw60nqq41iH6tiVoHhCFFane1B4ABFIT0Id6MefiVUCw
+
+{
+
+  "content": "Nima gap?"
+}
+
+### DELETE COMMENT
+DELETE localhost:8080/comment/delete/4
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg3ODgzNzAsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE4ODc0NzcwLCJpc3MiOiJLdW5VelRlc3QifQ.3iSLChZaS6gbmA_s0lhRoDjksS735-wWB-70lHD4kpFw60nqq41iH6tiVoHhCFFane1B4ABFIT0Id6MefiVUCw
+
+### GET ALL COMMENTS
+GET localhost:8080/comment/allCommentsForArticle/87365c73-b45d-4e56-96df-67c35877c375
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg4NzYzODYsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE4OTYyNzg2LCJpc3MiOiJLdW5VelRlc3QifQ.knxp2gMVFlk8mqLpnDpCFdzpzxbdkWvttjybrHJd4meaKTm-g-SuqUNyFoD0UR_ncSVeD33ZGBVPhFxdL8V4cA
+
+
+### GET ALL COMMENTS FOR AN ARTICLE WITH PAGINATION
+GET localhost:8080/comment/allCommentListPagination/87365c73-b45d-4e56-96df-67c35877c375
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg4NzYzODYsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE4OTYyNzg2LCJpc3MiOiJLdW5VelRlc3QifQ.knxp2gMVFlk8mqLpnDpCFdzpzxbdkWvttjybrHJd4meaKTm-g-SuqUNyFoD0UR_ncSVeD33ZGBVPhFxdL8V4cA
+
+
+### GET ALL COMMENTS FOR AN ARTICLE WITH FILTER
+POST localhost:8080/comment/allCommentListFilter
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg4NzYzODYsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE4OTYyNzg2LCJpc3MiOiJLdW5VelRlc3QifQ.knxp2gMVFlk8mqLpnDpCFdzpzxbdkWvttjybrHJd4meaKTm-g-SuqUNyFoD0UR_ncSVeD33ZGBVPhFxdL8V4cA
+
+{
+  "createdDateFrom": "2024-01-21T05:47:08.644",
+  "createdDateTo": "2024-08-21T05:47:08.644"
+}
+
+### GET COMMENT REPLY
+GET localhost:8080/comment/comment_reply_list/2
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJpYXQiOjE3MTg4NzYzODYsImlkIjoxNSwidXNlcm5hbWUiOiJtdXphZmZhcm1pa2UyQGdtYWlsLmNvbSIsInJvbGUiOiJST0xFX0FETUlOIiwiZXhwIjoxNzE4OTYyNzg2LCJpc3MiOiJLdW5VelRlc3QifQ.knxp2gMVFlk8mqLpnDpCFdzpzxbdkWvttjybrHJd4meaKTm-g-SuqUNyFoD0UR_ncSVeD33ZGBVPhFxdL8V4cA

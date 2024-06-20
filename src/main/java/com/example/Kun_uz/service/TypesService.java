@@ -1,8 +1,8 @@
 package com.example.Kun_uz.service;
 
 import com.example.Kun_uz.Mapper.TypesMapper;
-import com.example.Kun_uz.dto.createDTO.TypeCreateDTO;
-import com.example.Kun_uz.dto.TypesDTO;
+import com.example.Kun_uz.dto.types.TypeCreateDTO;
+import com.example.Kun_uz.dto.types.TypesDTO;
 import com.example.Kun_uz.entity.TypesEntity;
 
 import com.example.Kun_uz.enums.LanguageEnum;

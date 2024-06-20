@@ -6,24 +6,21 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
-import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Component;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.web.filter.RequestContextFilter;
 
-import java.util.UUID;
 
 @EnableWebSecurity
 @Component
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
         @Autowired
         private CustomUserDetailService customUserDetailService;
@@ -61,18 +58,14 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http, RequestContextFilter requestContextFilter) throws Exception {
         // authorization
-    /*    http.authorizeHttpRequests()
-                .anyRequest()
-                .authenticated()
-                .and().formLogin();*/
         http.authorizeHttpRequests(authorizationManagerRequestMatcherRegistry -> {
             authorizationManagerRequestMatcherRegistry
                     .requestMatchers("/auth/**").permitAll()
                     .requestMatchers("/profile/adm/**").hasRole("ADMIN")
                     .requestMatchers("/profile/current/*").hasAnyRole("USER","ADMIN")
                     .requestMatchers("profile/updatePhoto/*").authenticated()
-                    .requestMatchers("/type/adm/**").hasRole("ADMIN")
-                    .requestMatchers("/type/lang").authenticated()
+                    .requestMatchers("/types/adm/**").permitAll()   //TODO ADMMINGA UZGARTISH KK
+                    .requestMatchers("/types/lang").authenticated()
                     .requestMatchers("/region/lang").authenticated()
                     .requestMatchers("/region/adm/**").hasRole("ADMIN")
                     .requestMatchers("/category/adm/**").hasRole("ADMIN")

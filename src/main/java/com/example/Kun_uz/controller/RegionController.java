@@ -1,7 +1,7 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.createDTO.RegionCreateDTO;
-import com.example.Kun_uz.dto.RegionDTO;
+import com.example.Kun_uz.dto.region.RegionCreateDTO;
+import com.example.Kun_uz.dto.region.RegionDTO;
 import com.example.Kun_uz.enums.LanguageEnum;
 import com.example.Kun_uz.service.RegionService;
 import jakarta.validation.Valid;

@@ -1,28 +1,21 @@
-package com.example.Kun_uz.dto;
+package com.example.Kun_uz.dto.region;
 
-
-import com.example.Kun_uz.enums.LanguageEnum;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class TypesDTO {
-
+public class RegionDTO {
     private Integer id;
     private Integer orderNumber;
     private String nameUz;
     private String nameRu;
     private String nameEn;
     private Boolean visible;
-    private LocalDate createdDate;
+    private LocalDateTime createdDate;
     private String name;
-
-
-
-
 }

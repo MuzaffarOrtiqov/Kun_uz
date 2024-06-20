@@ -1,7 +1,6 @@
 package com.example.Kun_uz.repository;
 
 import com.example.Kun_uz.Mapper.TypesMapper;
-import com.example.Kun_uz.dto.TypesDTO;
 import com.example.Kun_uz.entity.TypesEntity;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

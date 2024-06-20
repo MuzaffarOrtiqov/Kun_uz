@@ -35,7 +35,6 @@ Content-Type: application/json
 POST localhost:8080/auth/loginWithEmail
 Content-Type: application/json
 
-
 {
   "email": "muzaffarmike2@gmail.com",
   "password": "M12345678m!"
@@ -44,7 +43,6 @@ Content-Type: application/json
 ### LOGIN WITH PHONE NUMBER
 POST localhost:8080/auth/loginWithPhone
 Content-Type: application/json
-
 
 {
   "phone": "998942702363",

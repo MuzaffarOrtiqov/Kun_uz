@@ -1,8 +1,6 @@
 package com.example.Kun_uz.controller;
 
-import com.example.Kun_uz.dto.EmailHistoryDTO;
-import com.example.Kun_uz.dto.SmsHistoryDTO;
-import com.example.Kun_uz.service.EmailHistoryService;
+import com.example.Kun_uz.dto.history.SmsHistoryDTO;
 import com.example.Kun_uz.service.SmsHistoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;

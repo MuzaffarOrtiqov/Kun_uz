@@ -1,6 +1,6 @@
 package com.example.Kun_uz.service;
 
-import com.example.Kun_uz.dto.createDTO.ProfileCreateDTo;
+import com.example.Kun_uz.dto.profile.ProfileCreateDTo;
 import com.example.Kun_uz.dto.FilterResponseDTO;
 import com.example.Kun_uz.dto.profile.ProfileDTO;
 import com.example.Kun_uz.dto.profile.ProfileFilterDTO;
@@ -132,8 +132,6 @@ public class ProfileService {
         return toDTOAmin(profileEntity);
     }
 
-    // TODO: HOW TO implement filter for createdDateFrom and CreatedDateTo
-
     public PageImpl<ProfileDTO> filter(ProfileFilterDTO filter, int page, int size) {
         FilterResponseDTO<ProfileEntity> filterResponse = profileCustomRepository.filter(filter, page, size);
 
@@ -147,6 +145,8 @@ public class ProfileService {
         }
         return new PageImpl<ProfileDTO>( dtoList, PageRequest.of(page,size), filterResponse.getTotalCount());
     }
+
+
 
 
 

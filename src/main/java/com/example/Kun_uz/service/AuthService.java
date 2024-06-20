@@ -1,6 +1,6 @@
 package com.example.Kun_uz.service;
 
-import com.example.Kun_uz.dto.SmsHistoryDTO;
+import com.example.Kun_uz.dto.history.SmsHistoryDTO;
 import com.example.Kun_uz.dto.auth.AuthDTO;
 import com.example.Kun_uz.dto.auth.RegistrationDTO;
 import com.example.Kun_uz.dto.auth.SmsLoginDTO;
